@@ -1,0 +1,23 @@
+<!--
+  ~   "THE ULTIMATE BEER-WARE LICENSE" (Revision 6739):
+  ~   <ygorcastor@gmail.com> wrote this file.  As long as you retain this notice you
+  ~   can do whatever you want with this stuff. I'm not liable for anything you do
+  ~   with this code, and if you want to pay me a beer in the unlikely event
+  ~   of us meeting, be my guest.
+  -->
+
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>true</withJansi>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%cyan(%d{HH:mm:ss.SSS}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

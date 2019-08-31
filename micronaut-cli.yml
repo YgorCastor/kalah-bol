@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: kalah.bol
+---
+testFramework: junit
+sourceLanguage: java
