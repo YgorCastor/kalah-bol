@@ -22,8 +22,11 @@ class AddPieceToPitRule implements PitRule {
     public GameState execute(GameState state) {
         if(condition().test(state)) {
             state.getCurrentPit().addPiece();
-            int nextIndex = state.getCurrentIndex() + 1;
             int remainingPieces = state.getRemainingPieces() - 1;
+            int nextIndex = state.getCurrentIndex();
+            if (remainingPieces != 0) {
+                nextIndex = state.getCurrentIndex() + 1;
+            }
             return new GameState(
                     state.getBoard(),
                     state.getCurrentPlayer(),
