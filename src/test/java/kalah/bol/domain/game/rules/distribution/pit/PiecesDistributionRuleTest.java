@@ -32,7 +32,7 @@ class PiecesDistributionRuleTest {
         Player secondPlayer = new Player("2");
         Board board = new Board(firstPlayer, secondPlayer);
         board.pit(0).takeAllPieces();
-        GameState state = new GameState(board , firstPlayer, 0, 20 ,
+        GameState state = new GameState(board, firstPlayer, secondPlayer, 0, 20,
                 Turn.PLAYER1,
                 VictoryState.ONGOING);
         Rule rule = new PiecesDistributionRule(new SkipPieceToPitRule(), new IdentityRule());

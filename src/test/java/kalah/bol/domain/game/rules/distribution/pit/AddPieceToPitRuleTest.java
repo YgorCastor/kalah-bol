@@ -39,7 +39,7 @@ class AddPieceToPitRuleTest {
         Player secondPlayer = new Player("2");
         Board board = new Board(firstPlayer, secondPlayer);
         board.pit(0).takeAllPieces();
-        GameState state = new GameState(board , firstPlayer, 1, 2,
+        GameState state = new GameState(board, firstPlayer, secondPlayer, 1, 2,
                 Turn.PLAYER1,
                 VictoryState.ONGOING);
         Rule rule = new AddPieceToPitRule();

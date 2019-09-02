@@ -33,7 +33,7 @@ import javax.validation.constraints.NotBlank;
 
 @Controller("/api/game")
 @Validated
-@Tag(name = "GameApi")
+@Tag(name = "Game")
 public class GameApi {
 
     private final GameService gameService;

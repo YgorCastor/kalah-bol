@@ -6,3 +6,6 @@ micronaut:
       swagger:
         paths: classpath:META-INF/swagger
         mapping: /swagger/**
+  server:
+    cors:
+      enabled: true

@@ -25,6 +25,10 @@ import kalah.bol.domain.session.SessionRepository;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+/**
+ * The Main game controller, this class is responsible to
+ * dispatch the commands of the game.
+ */
 @Singleton
 public class GameService {
 
@@ -35,19 +39,40 @@ public class GameService {
         this.sessionRepository = sessionRepository;
     }
 
+    /**
+     * Starts an new game
+     *
+     * @param command The New Game command
+     * @return A new session.
+     */
     public Session newGame(NewGameCommand command) {
         Game newGame = new Game(command.getFirstPlayer(), command.getSecondPlayer());
         return sessionRepository.createSession(newGame);
     }
 
+    /**
+     * Finds an ongoing game with the informed Id
+     *
+     * @param sessionId The session id
+     * @return The session if found
+     */
     public Session findGame(String sessionId) {
         return sessionRepository.withId(sessionId);
     }
 
+    /**
+     * Dispatches an movement to the informed game.
+     *
+     * @param sessionId The Game session Id
+     * @param action The action to be executed
+     * @return The new game state
+     */
     public GameState movement(String sessionId, Action action) {
         Session session = sessionRepository.withId(sessionId);
         Game game = session.getGame();
-        return game.play(action);
+        GameState newState = game.play(action);
+        sessionRepository.updateGame(sessionId, game);
+        return newState;
     }
 
 }

@@ -33,7 +33,7 @@ class SelectStartingPitRuleTest {
         Player firstPlayer = new Player("1");
         Player secondPlayer = new Player("2");
         Board board = new Board(firstPlayer, secondPlayer);
-        GameState state = new GameState(board , firstPlayer, 1, 0 , Turn.PLAYER1, VictoryState.ONGOING);
+        GameState state = new GameState(board, firstPlayer, secondPlayer, 1, 0, Turn.PLAYER1, VictoryState.ONGOING);
         Rule rule = new SelectStartingPitRule(new IdentityRule());
 
         // when
@@ -52,7 +52,7 @@ class SelectStartingPitRuleTest {
         Player firstPlayer = new Player("1");
         Player secondPlayer = new Player("2");
         Board board = new Board(firstPlayer, secondPlayer);
-        GameState state = new GameState(board , firstPlayer, 6, 0 , Turn.PLAYER1, VictoryState.ONGOING);
+        GameState state = new GameState(board, firstPlayer, secondPlayer, 6, 0, Turn.PLAYER1, VictoryState.ONGOING);
         Rule rule = new SelectStartingPitRule(new IdentityRule());
 
         // then
@@ -67,7 +67,7 @@ class SelectStartingPitRuleTest {
         Player firstPlayer = new Player("1");
         Player secondPlayer = new Player("2");
         Board board = new Board(firstPlayer, secondPlayer);
-        GameState state = new GameState(board , firstPlayer, 7, 0 , Turn.PLAYER1, VictoryState.ONGOING);
+        GameState state = new GameState(board, firstPlayer, secondPlayer, 7, 0, Turn.PLAYER1, VictoryState.ONGOING);
         Rule rule = new SelectStartingPitRule(new IdentityRule());
 
         // then

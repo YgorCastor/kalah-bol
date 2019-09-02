@@ -37,6 +37,7 @@ class OwnStoreEndingPitRule implements PitRule {
             gameState = new GameState(
                     gameState.getBoard(),
                     gameState.getCurrentPlayer(),
+                    gameState.getOtherPlayer(),
                     gameState.getCurrentIndex(),
                     gameState.getRemainingPieces(),
                     gameState.getCurrentTurn(),

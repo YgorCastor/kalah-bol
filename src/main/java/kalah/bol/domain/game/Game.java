@@ -38,7 +38,7 @@ public class Game {
      */
     public Game(Player firstPlayer, Player secondPlayer) {
         Board board = new Board(firstPlayer, secondPlayer);
-        this.state = new GameState(board, firstPlayer, -1, 0, Turn.PLAYER1, VictoryState.ONGOING);
+        this.state = new GameState(board, firstPlayer, secondPlayer, 0, 0, Turn.PLAYER1, VictoryState.ONGOING);
         this.go = new SelectStartingPitRule();
         this.inTurn = new Semaphore(1);
     }
@@ -57,7 +57,8 @@ public class Game {
             if (!action.getPlayer().equals(state.getCurrentPlayer())) {
                 throw new NotPlayerTurnException(action.getPlayer());
             }
-            return go.execute(state.newMovement(action.getPitIndex()));
+            state = go.execute(state.newMovement(action.getPitIndex()));
+            return state;
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new TurnExecutionException();
@@ -69,4 +70,5 @@ public class Game {
     public GameState getState() {
         return state;
     }
+
 }

@@ -49,6 +49,7 @@ public class SelectStartingPitRule implements Rule {
         GameState changedState = new GameState(
                 state.getBoard(),
                 state.getCurrentPlayer(),
+                state.getOtherPlayer(),
                 nextIndex,
                 numPieces,
                 state.getCurrentTurn(),

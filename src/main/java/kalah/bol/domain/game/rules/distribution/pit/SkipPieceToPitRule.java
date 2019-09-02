@@ -38,6 +38,7 @@ class SkipPieceToPitRule implements PitRule {
             return new GameState(
                     state.getBoard(),
                     state.getCurrentPlayer(),
+                    state.getOtherPlayer(),
                     nextIndex,
                     state.getRemainingPieces(),
                     state.getCurrentTurn(),

@@ -41,4 +41,10 @@ class SessionHashmapRepository implements SessionRepository {
         sessions.put(sessionId, game);
         return new Session(sessionId, game);
     }
+
+    @Override
+    public Session updateGame(String id, Game game) {
+        sessions.replace(id, game);
+        return new Session(id, game);
+    }
 }

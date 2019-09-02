@@ -27,6 +27,7 @@ class AddPieceToPitRule implements PitRule {
             return new GameState(
                     state.getBoard(),
                     state.getCurrentPlayer(),
+                    state.getOtherPlayer(),
                     nextIndex,
                     remainingPieces,
                     state.getCurrentTurn(),

@@ -24,6 +24,7 @@ public class GameState {
 
     private final Board board;
     private final Player currentPlayer;
+    private final Player otherPlayer;
     private final Integer currentIndex;
     private final Integer remainingPieces;
     private final Turn turn;
@@ -42,6 +43,7 @@ public class GameState {
     public GameState(
             Board board,
             Player currentPlayer,
+            Player otherPlayer,
             Integer currentIndex,
             Integer remainingPieces,
             Turn turn,
@@ -49,6 +51,7 @@ public class GameState {
     ) {
         this.board = board;
         this.currentPlayer = currentPlayer;
+        this.otherPlayer = otherPlayer;
         this.currentIndex = currentIndex;
         this.remainingPieces = remainingPieces;
         this.turn = turn;
@@ -58,6 +61,7 @@ public class GameState {
     private GameState(GameState state, int fromIndex) {
         this.board = state.board;
         this.currentPlayer = state.currentPlayer;
+        this.otherPlayer = state.otherPlayer;
         this.currentIndex = fromIndex;
         this.remainingPieces = state.remainingPieces;
         this.turn = state.turn;
@@ -76,6 +80,13 @@ public class GameState {
      */
     public Player getCurrentPlayer() {
         return currentPlayer;
+    }
+
+    /**
+     * @return The other player
+     */
+    public Player getOtherPlayer() {
+        return otherPlayer;
     }
 
     /**
@@ -120,7 +131,7 @@ public class GameState {
      * @param fromIndex The Starting Index
      * @return The new GameState
      */
-    public GameState newMovement(int fromIndex) {
+    GameState newMovement(int fromIndex) {
         return new GameState(clone(this), fromIndex);
     }
 

@@ -39,7 +39,7 @@ class OwnStoreEndingPitRuleTest {
         Player secondPlayer = new Player("2");
         Board board = new Board(firstPlayer, secondPlayer);
         board.pit(0).takeAllPieces();
-        GameState state = new GameState(board , firstPlayer, 6, 0,
+        GameState state = new GameState(board, firstPlayer, secondPlayer, 6, 0,
                 Turn.PLAYER1,
                 VictoryState.ONGOING);
         Rule rule = new OwnStoreEndingPitRule(new IdentityRule());

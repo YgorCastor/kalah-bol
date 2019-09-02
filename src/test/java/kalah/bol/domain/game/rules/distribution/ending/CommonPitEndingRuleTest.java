@@ -39,7 +39,7 @@ class CommonPitEndingRuleTest {
         Player firstPlayer = new Player("1");
         Player secondPlayer = new Player("2");
         Board board = new Board(firstPlayer, secondPlayer);
-        GameState state = new GameState(board, secondPlayer, 2, 0,
+        GameState state = new GameState(board, secondPlayer, firstPlayer, 2, 0,
                 Turn.PLAYER1,
                 VictoryState.ONGOING);
         Rule rule = new CommonPitEndingRule(new IdentityRule());
@@ -58,7 +58,7 @@ class CommonPitEndingRuleTest {
         Player firstPlayer = new Player("1");
         Player secondPlayer = new Player("2");
         Board board = new Board(firstPlayer, secondPlayer);
-        GameState state = new GameState(board, secondPlayer, 6, 0,
+        GameState state = new GameState(board, secondPlayer, firstPlayer, 6, 0,
                 Turn.PLAYER1,
                 VictoryState.ONGOING);
         Rule rule = new CommonPitEndingRule(new IdentityRule());

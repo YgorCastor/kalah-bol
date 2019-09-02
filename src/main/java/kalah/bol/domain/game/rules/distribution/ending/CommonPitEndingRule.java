@@ -39,6 +39,7 @@ class CommonPitEndingRule implements PitRule {
             turn = turn == Turn.PLAYER1 ? Turn.PLAYER2 : Turn.PLAYER1;
             gameState = new GameState(
                     gameState.getBoard(),
+                    gameState.getOtherPlayer(),
                     gameState.getCurrentPlayer(),
                     gameState.getCurrentIndex(),
                     gameState.getRemainingPieces(),

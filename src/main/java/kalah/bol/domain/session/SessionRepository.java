@@ -31,4 +31,13 @@ public interface SessionRepository {
      */
     Session createSession(Game game);
 
+    /**
+     * Updates an ongoing game
+     *
+     * @param id   The session id
+     * @param game The new game id
+     * @return The new Session
+     */
+    Session updateGame(String id, Game game);
+
 }

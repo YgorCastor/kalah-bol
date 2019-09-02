@@ -41,7 +41,7 @@ class VictoryRuleTest {
         board.pit(6).addPieces(10);
         board.pit(13).addPieces(2);
         board.pit(11).addPieces(2);
-        GameState state = new GameState(board, secondPlayer, 1, 0,
+        GameState state = new GameState(board, secondPlayer, firstPlayer, 1, 0,
                 Turn.PLAYER1,
                 VictoryState.ONGOING);
         Rule rule = new VictoryRule();
@@ -64,7 +64,7 @@ class VictoryRuleTest {
         board.pit(6).addPieces(10);
         board.pit(13).addPieces(2);
         board.pit(11).addPieces(13);
-        GameState state = new GameState(board, secondPlayer, 1, 0,
+        GameState state = new GameState(board, secondPlayer, firstPlayer, 1, 0,
                 Turn.PLAYER1,
                 VictoryState.ONGOING);
         Rule rule = new VictoryRule();

@@ -39,7 +39,7 @@ class OwnEmptyPitEndingRuleTest {
         Player secondPlayer = new Player("2");
         Board board = new Board(firstPlayer, secondPlayer);
         board.pit(1).takeAllPieces();
-        GameState state = new GameState(board, firstPlayer, 1, 0,
+        GameState state = new GameState(board, firstPlayer, secondPlayer, 1, 0,
                 Turn.PLAYER1,
                 VictoryState.ONGOING);
         Rule rule = new OwnEmptyPitEndingRule(new IdentityRule());
@@ -54,7 +54,7 @@ class OwnEmptyPitEndingRuleTest {
         //given: Another Case of ending Pit
         board = new Board(firstPlayer, secondPlayer);
         board.pit(3).takeAllPieces();
-        state = new GameState(board, firstPlayer, 3, 0,
+        state = new GameState(board, firstPlayer, secondPlayer, 3, 0,
                 Turn.PLAYER1,
                 VictoryState.ONGOING);
 
@@ -74,7 +74,7 @@ class OwnEmptyPitEndingRuleTest {
         Player secondPlayer = new Player("2");
         Board board = new Board(firstPlayer, secondPlayer);
         board.pit(12).takeAllPieces();
-        GameState state = new GameState(board, secondPlayer, 12, 0,
+        GameState state = new GameState(board, secondPlayer, firstPlayer, 12, 0,
                 Turn.PLAYER2,
                 VictoryState.ONGOING);
         Rule rule = new OwnEmptyPitEndingRule(new IdentityRule());
@@ -89,7 +89,7 @@ class OwnEmptyPitEndingRuleTest {
         // when
         board = new Board(firstPlayer, secondPlayer);
         board.pit(10).takeAllPieces();
-        state = new GameState(board, secondPlayer, 10, 0,
+        state = new GameState(board, secondPlayer, firstPlayer, 10, 0,
                 Turn.PLAYER2,
                 VictoryState.ONGOING);
 

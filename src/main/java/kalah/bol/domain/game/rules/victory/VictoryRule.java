@@ -30,6 +30,7 @@ public class VictoryRule implements Rule {
             return new GameState(
                     gameState.getBoard(),
                     gameState.getCurrentPlayer(),
+                    gameState.getOtherPlayer(),
                     gameState.getCurrentIndex(),
                     gameState.getRemainingPieces(),
                     gameState.getCurrentTurn(),
